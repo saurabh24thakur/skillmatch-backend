@@ -1,0 +1,202 @@
+{
+    "Web Wizard": {
+      "courseId": "course001",
+      "requiredSkills": ["HTML", "CSS", "JavaScript", "Responsive Design"]
+    },
+    "Cloud Architect": {
+      "courseId": "course002",
+      "requiredSkills": ["AWS", "Azure", "Cloud Security", "DevOps"]
+    },
+    "Data Detective": {
+      "courseId": "course003",
+      "requiredSkills": ["Python", "SQL", "Data Visualization", "Machine Learning"]
+    },
+    "Mobile Maestro": {
+      "courseId": "course004",
+      "requiredSkills": ["Kotlin", "Swift", "React Native", "UI/UX"]
+    },
+    "AI Innovator": {
+      "courseId": "course005",
+      "requiredSkills": ["Python", "TensorFlow", "Deep Learning", "NLP"]
+    },
+    "Cyber Guardian": {
+      "courseId": "course006",
+      "requiredSkills": ["Network Security", "Penetration Testing", "Firewalls", "Cryptography"]
+    },
+    "Product Visionary": {
+      "courseId": "course007",
+      "requiredSkills": ["Product Management", "Agile", "Market Research", "Roadmapping"]
+    },
+    "Growth Hacker": {
+      "courseId": "course008",
+      "requiredSkills": ["SEO", "Content Marketing", "Analytics", "A/B Testing"]
+    },
+    "Digital Storyteller": {
+      "courseId": "course009",
+      "requiredSkills": ["Copywriting", "Content Creation", "Social Media", "Branding"]
+    },
+    "UI Artist": {
+      "courseId": "course010",
+      "requiredSkills": ["Figma", "Sketch", "Adobe XD", "Prototyping"]
+    },
+    "Backend Alchemist": {
+      "courseId": "course011",
+      "requiredSkills": ["Node.js", "Express", "Databases", "API Design"]
+    },
+    "DevOps Dynamo": {
+      "courseId": "course012",
+      "requiredSkills": ["Docker", "Kubernetes", "CI/CD", "Linux"]
+    },
+    "Ecommerce Strategist": {
+      "courseId": "course013",
+      "requiredSkills": ["Shopify", "WooCommerce", "Digital Marketing", "Conversion Optimization"]
+    },
+    "Blockchain Explorer": {
+      "courseId": "course014",
+      "requiredSkills": ["Solidity", "Ethereum", "Smart Contracts", "Web3.js"]
+    },
+    "Game Crafter": {
+      "courseId": "course015",
+      "requiredSkills": ["Unity", "C#", "Game Design", "3D Modeling"]
+    },
+    "Machine Whisperer": {
+      "courseId": "course016",
+      "requiredSkills": ["Python", "Scikit-learn", "Data Science", "Statistics"]
+    },
+    "Business Analyst": {
+      "courseId": "course017",
+      "requiredSkills": ["Excel", "SQL", "Business Intelligence", "Reporting"]
+    },
+    "Customer Success Hero": {
+      "courseId": "course018",
+      "requiredSkills": ["CRM", "Communication", "Problem Solving", "Empathy"]
+    },
+    "Sales Trailblazer": {
+      "courseId": "course019",
+      "requiredSkills": ["Lead Generation", "Negotiation", "CRM", "Presentation"]
+    },
+    "Marketing Maverick": {
+      "courseId": "course020",
+      "requiredSkills": ["Digital Marketing", "Campaign Management", "Analytics", "Copywriting"]
+    },
+    "Content Curator": {
+      "courseId": "course021",
+      "requiredSkills": ["Content Strategy", "Editing", "SEO", "Research"]
+    },
+    "Visual Storyteller": {
+      "courseId": "course022",
+      "requiredSkills": ["Photography", "Video Editing", "Graphic Design", "Storyboarding"]
+    },
+    "Operations Ninja": {
+      "courseId": "course023",
+      "requiredSkills": ["Process Improvement", "Project Management", "Logistics", "Scheduling"]
+    },
+    "Financial Analyst": {
+      "courseId": "course024",
+      "requiredSkills": ["Financial Modeling", "Excel", "Forecasting", "Data Analysis"]
+    },
+    "HR Champion": {
+      "courseId": "course025",
+      "requiredSkills": ["Recruitment", "Onboarding", "Employee Relations", "HRIS"]
+    },
+    "Support Specialist": {
+      "courseId": "course026",
+      "requiredSkills": ["Customer Service", "Ticketing Systems", "Troubleshooting", "Product Knowledge"]
+    },
+    "QA Detective": {
+      "courseId": "course027",
+      "requiredSkills": ["Manual Testing", "Automation", "Bug Tracking", "Selenium"]
+    },
+    "Mobile App Magician": {
+      "courseId": "course028",
+      "requiredSkills": ["Flutter", "Dart", "iOS", "Android"]
+    },
+    "Full Stack Virtuoso": {
+      "courseId": "course029",
+      "requiredSkills": ["JavaScript", "React", "Node.js", "MongoDB"]
+    },
+    "Cloud Solutions Engineer": {
+      "courseId": "course030",
+      "requiredSkills": ["AWS", "GCP", "Terraform", "Serverless"]
+    },
+    "Data Wrangler": {
+      "courseId": "course031",
+      "requiredSkills": ["ETL", "SQL", "Data Cleaning", "Big Data"]
+    },
+    "UX Researcher": {
+      "courseId": "course032",
+      "requiredSkills": ["User Interviews", "Usability Testing", "Wireframing", "Persona Creation"]
+    },
+    "Security Analyst": {
+      "courseId": "course033",
+      "requiredSkills": ["Risk Assessment", "SIEM", "Incident Response", "Vulnerability Scanning"]
+    },
+    "Brand Evangelist": {
+      "courseId": "course034",
+      "requiredSkills": ["Brand Strategy", "Public Speaking", "Networking", "Social Media"]
+    },
+    "Innovation Catalyst": {
+      "courseId": "course035",
+      "requiredSkills": ["Design Thinking", "Prototyping", "Market Analysis", "Pitching"]
+    },
+    "Digital Campaigner": {
+      "courseId": "course036",
+      "requiredSkills": ["AdWords", "Facebook Ads", "Analytics", "Copywriting"]
+    },
+    "SEO Sorcerer": {
+      "courseId": "course037",
+      "requiredSkills": ["SEO", "Keyword Research", "Link Building", "Google Analytics"]
+    },
+    "Email Marketing Guru": {
+      "courseId": "course038",
+      "requiredSkills": ["Mailchimp", "Campaign Design", "A/B Testing", "Copywriting"]
+    },
+    "Social Media Alchemist": {
+      "courseId": "course039",
+      "requiredSkills": ["Instagram", "Twitter", "Content Planning", "Analytics"]
+    },
+    "Video Producer": {
+      "courseId": "course040",
+      "requiredSkills": ["Filmmaking", "Editing", "Scriptwriting", "Lighting"]
+    },
+    "Voiceover Artist": {
+      "courseId": "course041",
+      "requiredSkills": ["Voice Acting", "Audio Editing", "Script Reading", "Diction"]
+    },
+    "Legal Consultant": {
+      "courseId": "course042",
+      "requiredSkills": ["Legal Research", "Contract Drafting", "Compliance", "Negotiation"]
+    },
+    "Project Pilot": {
+      "courseId": "course043",
+      "requiredSkills": ["Project Planning", "Agile", "Scrum", "Risk Management"]
+    },
+    "SaaS Specialist": {
+      "courseId": "course044",
+      "requiredSkills": ["SaaS Platforms", "API Integration", "Customer Success", "Onboarding"]
+    },
+    "Tech Evangelist": {
+      "courseId": "course045",
+      "requiredSkills": ["Public Speaking", "Technical Writing", "Community Building", "Demoing"]
+    },
+    "Startup Sherpa": {
+      "courseId": "course046",
+      "requiredSkills": ["Pitching", "Fundraising", "Lean Startup", "Networking"]
+    },
+    "Analytics Architect": {
+      "courseId": "course047",
+      "requiredSkills": ["Data Modeling", "BI Tools", "SQL", "Visualization"]
+    },
+    "IoT Innovator": {
+      "courseId": "course048",
+      "requiredSkills": ["Embedded Systems", "Sensors", "Networking", "Python"]
+    },
+    "VR Experience Designer": {
+      "courseId": "course049",
+      "requiredSkills": ["Unity", "3D Modeling", "C#", "UX Design"]
+    },
+    "Robotics Engineer": {
+      "courseId": "course050",
+      "requiredSkills": ["Robotics", "C++", "ROS", "Automation"]
+    }
+  }
