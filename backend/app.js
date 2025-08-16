@@ -8,7 +8,7 @@ const app = express();
 // --- CORS Configuration ---
 // 2. Define your CORS options
 const corsOptions = {
-  origin: "http://localhost:5173", // This is the only origin that will be allowed to make requests
+  origin: "https://skillmatch-frontend-frt.onrender.com", // This is the only origin that will be allowed to make requests
   optionsSuccessStatus: 200 // For legacy browser support
 };
 
