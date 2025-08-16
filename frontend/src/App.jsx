@@ -4,7 +4,7 @@ import axios from 'axios';
 // --- API Client Setup ---
 // This connects to your backend. Ensure the URL and port are correct.
 const api = axios.create({
-  baseURL: 'http://localhost:3000', 
+  baseURL: 'https://skillmatch-backend-bked.onrender.com', 
 });
 
 // Automatically attaches the user's login token to every API request
