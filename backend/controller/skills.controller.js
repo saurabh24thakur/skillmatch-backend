@@ -38,9 +38,12 @@ function readJobsFromFile() {
 }
 
 // Upload skills controller (requires auth middleware)
+// ... other functions ...
+
+// Upload skills controller (requires auth middleware)
 export const uploadSkills = (req, res) => {
   const { skills } = req.body;
-  const userId = req.user?.id; // req.user is set by auth middleware
+  const userId = req.user?.id;
 
   if (!userId) {
     return res.status(401).json({ message: 'Unauthorized' });
@@ -49,11 +52,15 @@ export const uploadSkills = (req, res) => {
     return res.status(400).json({ message: 'Skills string is required' });
   }
 
-  // Split by comma or space, trim, and filter out empty strings
+  // --- THIS IS THE FIX ---
+  // Change the split from /[, ]+/ to just /,/
+  // This will only split by commas and ignore spaces within skill names.
   const skillsArray = skills
-    .split(/[, ]+/)
-    .map(skill => skill.trim())
+    .split(/,/) // <<-- THE ONLY CHANGE IS HERE
+    .map(skill => skill.trim()) // .trim() will remove leading/trailing spaces
     .filter(skill => skill.length > 0);
+  // --- END OF FIX ---
+
 
   // Read existing user skills
   const userSkills = readUserSkillsFromFile();
@@ -72,6 +79,8 @@ export const uploadSkills = (req, res) => {
 
   res.status(201).json({ message: 'Skills uploaded', skills: skillsArray });
 };
+
+// ... other functions ...
 
 // Get skills for the logged-in user
 export const getMySkills = (req, res) => {
@@ -92,48 +101,78 @@ export const getAllUserSkills = (req, res) => {
 
 // Find courses by 60-100% skill match for the logged-in user
 export const getCoursesBySkillMatch = (req, res) => {
+  // --- START DEBUGGING ---
+  console.log("\n=============================================");
+  console.log("Starting getCoursesBySkillMatch function...");
+
   const userId = req.user?.id;
+  console.log(`Step 1: Authenticated User ID is: ${userId}`);
+  
   if (!userId) {
+    console.log("   [FAIL] No user ID found. Aborting.");
     return res.status(401).json({ message: 'Unauthorized' });
   }
 
-  // Get the user's skills
-  const userSkills = readUserSkillsFromFile();
-  const user = userSkills.find(u => u.userId === userId);
-  const skills = user ? user.skills : [];
-
-  if (!skills || skills.length === 0) {
-    return res.status(400).json({ message: 'No skills found for user' });
+  const allUserSkills = readUserSkillsFromFile();
+  const userSkillObject = allUserSkills.find(u => u.userId === userId);
+  const userSkills = userSkillObject ? userSkillObject.skills : [];
+  
+  console.log(`Step 2: User's skills from userSkills.json are: [${userSkills.join(', ')}]`);
+  
+  if (!userSkills || userSkills.length === 0) {
+    console.log("   [FAIL] User has no skills. Returning empty array.");
+    return res.json({ matchingCourses: [] });
   }
 
-  const jobs = readJobsFromFile();
-  const userSkillsLower = skills.map(s => s.toLowerCase());
+  const jobsData = readJobsFromFile();
+  console.log("Step 3: Data loaded from jobs.json:");
+  console.log(JSON.stringify(jobsData, null, 2)); // Print the entire jobs file content
 
-  const matchingCourses = Object.entries(jobs)
+  if (Object.keys(jobsData).length === 0) {
+      console.log("   [FAIL] jobs.json is empty or not a valid object. Returning empty array.");
+      return res.json({ matchingCourses: [] });
+  }
+
+  const userSkillsLower = userSkills.map(s => s.toLowerCase());
+  console.log(`Step 4: User skills converted to lowercase: [${userSkillsLower.join(', ')}]`);
+
+  console.log("Step 5: Starting to loop through each job to check for matches...");
+  const matchingCourses = Object.entries(jobsData)
     .map(([jobTitle, jobData]) => {
-      const requiredSkills = jobData.requiredSkills;
-      const matchedSkills = requiredSkills.filter(skill =>
-        userSkillsLower.includes(skill.toLowerCase())
+      console.log(`\n   - Checking job: "${jobTitle}"`);
+      
+      const requiredSkills = jobData.requiredSkills || [];
+      console.log(`     Required skills: [${requiredSkills.join(', ')}]`);
+      
+      const matchedSkills = requiredSkills.filter(reqSkill =>
+        userSkillsLower.includes(reqSkill.toLowerCase())
       );
-      const missingSkills = requiredSkills.filter(skill =>
-        !userSkillsLower.includes(skill.toLowerCase())
-      );
-      const matchPercent = (matchedSkills.length / requiredSkills.length) * 100;
+      console.log(`     Matched skills: [${matchedSkills.join(', ')}]`);
 
-      // Only include if match is between 60% and 100% (inclusive)
-      if (matchPercent >= 60 && matchPercent <= 100) {
-        return {
-          jobTitle,
-          courseId: jobData.courseId,
-          requiredSkills,
-          matchedSkills,
-          missingSkills,
-          matchPercent: Math.round(matchPercent)
-        };
+      if (requiredSkills.length === 0) {
+        console.log("     Result: Skipping job (no required skills).");
+        return null;
       }
-      return null;
+      
+      const matchPercent = (matchedSkills.length / requiredSkills.length) * 100;
+      console.log(`     Match Percentage: ${matchPercent.toFixed(2)}%`);
+      
+      if (matchPercent >= 60) {
+        console.log("     Result: MATCH FOUND! (>= 60%)");
+        // ... (return object logic is fine)
+        const missingSkills = requiredSkills.filter(reqSkill => !userSkillsLower.includes(reqSkill.toLowerCase()));
+        return { jobTitle, courseId: jobData.courseId, requiredSkills, matchedSkills, missingSkills, matchPercent: Math.round(matchPercent) };
+      } else {
+        console.log("     Result: No match (< 60%).");
+        return null;
+      }
     })
-    .filter(Boolean); // Remove nulls
+    .filter(Boolean);
+
+  console.log("\nStep 6: Final list of matched courses being sent to frontend:");
+  console.log(JSON.stringify(matchingCourses, null, 2));
+  console.log("=============================================\n");
+  // --- END DEBUGGING ---
 
   res.json({ matchingCourses });
 };

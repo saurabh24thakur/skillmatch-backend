@@ -4,5 +4,29 @@
     "username": "saurabh",
     "password": "$2b$10$eebn.qRo9sOrv/ZFESej2edL77zmHdMBfsQBuYkuF3wcf6ubtHgSq",
     "type": "job_seeker"
+  },
+  {
+    "id": 2,
+    "username": "rohit@gmaiil.com",
+    "password": "$2b$10$ZCMLcheLSeCoGnGm1YV/C.3gF6JBCvgKEUF19dj.EztLLTsvSROga",
+    "type": "student"
+  },
+  {
+    "id": 3,
+    "username": "qwe@gmail.com",
+    "password": "$2b$10$Vj0soIciZT7eAWp4P6JNJeaomkxVzNJ4ZD6fDtf2GqGatSrst6aB2",
+    "type": "student"
+  },
+  {
+    "id": 4,
+    "username": "qe@gmail.com",
+    "password": "$2b$10$isONOV/1FqsJQwRqBu139u4kIIJfZ.TrbIKxlzKJbs2TrkN.4gR9a",
+    "type": "student"
+  },
+  {
+    "id": 5,
+    "username": "arjitsingh@gmail.com",
+    "password": "$2b$10$9/s5HtKmZ8eWS8DMi/kiBOfREkjJR/MqIPJv0mI9m6EDYhVQYN1Bi",
+    "type": "student"
   }
 ]

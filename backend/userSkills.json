@@ -8,5 +8,29 @@
       "HTML",
       "CSS"
     ]
+  },
+  {
+    "userId": 4,
+    "skills": [
+      "python",
+      "javascript",
+      "Python",
+      "SQL",
+      "Data",
+      "Visualization",
+      "Machine",
+      "Learning",
+      "php",
+      "Data Visualization",
+      "Machine Learning"
+    ]
+  },
+  {
+    "userId": 5,
+    "skills": [
+      "Data Visualization",
+      "Machine Learning",
+      "python"
+    ]
   }
 ]
